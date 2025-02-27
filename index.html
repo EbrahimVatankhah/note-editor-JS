@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Text Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="editor-header">
+            <div class="toolbar">
+                <button class="btn btn-primary" onclick="saveText()">
+                    <i class="fas fa-save"></i>
+                    <span>Save</span>
+                </button>
+                
+                <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload</span>
+                </button>
+                
+                <button class="btn btn-primary" onclick="downloadText()">
+                    <i class="fas fa-download"></i>
+                    <span>Download</span>
+                </button>
+
+                <select id="fontSelect" onchange="changeFont(this.value)">
+                    <option value="Segoe UI">Default Font</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+
+                <input type="color" id="colorPicker" onchange="changeColor(this.value)">
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <textarea id="editor" placeholder="Enter your text here..."></textarea>
+        </div>
+    </div>
+
+    <input type="file" id="fileInput" accept=".txt" onchange="handleFileSelect(event)">
+
+   <script src="script.js"></script>
+</body>
+</html>
